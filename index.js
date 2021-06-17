@@ -31,4 +31,4 @@ function handleUploads() {
     }, client.config.watchInterval);
 }
 
-client.login(client.config.token);
+client.login(process.env.token);
