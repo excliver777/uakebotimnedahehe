@@ -7,6 +7,8 @@ client.db = require("quick.db");
 client.request = new (require("rss-parser"))();
 client.config = require("./config.js");
 
+client.user.setPresence({ game: { name: `${prefix}추천영상 을 입력하여, 으악의 추천영상을 받아보세요!` }, status: 'online' });
+
 client.on("ready", () => {
     console.log("I'm ready!");
     handleUploads();
