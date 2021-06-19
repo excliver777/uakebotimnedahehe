@@ -1,5 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const { cuchan } = require('./config.js')
+const fs = require('fs');
+const { prefix } = require('./config.js');
 client.db = require("quick.db");
 client.request = new (require("rss-parser"))();
 client.config = require("./config.js");
@@ -8,6 +11,29 @@ client.on("ready", () => {
     console.log("I'm ready!");
     handleUploads();
 });
+
+client.on('message', message => {
+    if (message.content == "으악") {
+    let embed = new Discord.MessageEmbed()
+    .setTitle(`으악`)
+    message.channel.send(embed)
+  }})
+
+  client.on('message', (message) => {
+    if (message.author.bot) return;
+    if (message.content == `${prefix}추천영상`) {
+      let replies = JSON.parse(fs.readFileSync('./replies.js', 'utf8'));
+      let reply = randomItem(replies);//${cuchan}${reply}
+      let embed = new Discord.MessageEmbed() //embed
+      .setTitle(`${cuchan}`)
+      .setURL(`${reply}`)
+      message.channel.send(embed);
+    }
+  });
+
+  function randomItem(array) {
+    return array[Math.floor(Math.random()*array.length)];
+  }
 
 function handleUploads() {
     if (client.db.fetch(`postedVideos`) === null) client.db.set(`postedVideos`, []);

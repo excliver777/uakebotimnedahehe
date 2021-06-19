@@ -1,4 +1,6 @@
 module.exports = {
+    cuchan: "오늘의 추천영상 !",
+    prefix: "!",
     token: "",
     channel: "853343890958712873",
     messageTemplate: " **{author}** 님이 **{title}**를 업로드를 했어요 !!\n{url}",
