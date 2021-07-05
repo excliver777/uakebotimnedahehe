@@ -14,7 +14,7 @@ client.on("ready", () => {
 });
 client.on('message', message => {
 	if (message.content === '으악') {
-		message.react('861498718720753664');
+		message.react('853395595443830824');
 	}
 });
 
