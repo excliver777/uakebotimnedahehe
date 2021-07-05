@@ -15,18 +15,7 @@ client.on("ready", () => {
 
 client.on('message', message => {
   if(message.content == `으악`) {
-    const number = [
-    "AK",
-    "으악으악",
-    "내?",
-    "으갸갸갹",
-    "으악 받아라 !",
-    "저 불럿어요?",
-  ];
-  
-  const Response = Math.floor(Math.random() * number.length);
-  
-  message.channel.send(`${number[Response]}`)
+      message.react('861498718720753664');
   }})
 
   client.on('message', (message) => {
