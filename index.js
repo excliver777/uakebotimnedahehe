@@ -12,11 +12,11 @@ client.on("ready", () => {
     console.log("I'm ready!");
     handleUploads();
 });
-
 client.on('message', message => {
-  if(message.content == `으악`) {
-      message.react('861498718720753664');
-  }})
+	if (message.content === '으악') {
+		message.react('861498718720753664');
+	}
+});
 
   client.on('message', (message) => {
     if (message.author.bot) return;
