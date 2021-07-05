@@ -14,10 +14,19 @@ client.on("ready", () => {
 });
 
 client.on('message', message => {
-    if (message.content == "으악") {
-    let embed = new Discord.MessageEmbed()
-    .setTitle(`으악`)
-    message.channel.send(embed)
+  if(message.content == `으악`) {
+    const number = [
+    "AK",
+    "으악으악",
+    "내?",
+    "으갸갸갹",
+    "으악 받아라 !",
+    "저 불럿어요?",
+  ];
+  
+  const Response = Math.floor(Math.random() * number.length);
+  
+  message.channel.send(`${number[Response]}`)
   }})
 
   client.on('message', (message) => {
@@ -35,6 +44,8 @@ client.on('message', message => {
   function randomItem(array) {
     return array[Math.floor(Math.random()*array.length)];
   }
+
+
 
 function handleUploads() {
     if (client.db.fetch(`postedVideos`) === null) client.db.set(`postedVideos`, []);
